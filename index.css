@@ -1,0 +1,86 @@
+@font-face {
+    font-family: "SourceSansProBold";
+    src: url(SourceSansPro-Bold.otf) format("opentype");
+}
+
+@font-face {
+    font-family: "SourceSansProReg";
+    src: url(SourceSansPro-Regular.otf) format("opentype");
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: SourceSansProReg, sans-serif;
+    font-size: 12px;
+    width: 375px;
+    margin: 0 auto;
+}
+
+header {
+    padding: 5px;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.border {
+    border-bottom: 1px solid #C6C6C6;
+}
+
+.oldagram {
+    width: 127px;
+}
+
+.icon-pic {
+    width: 34px;
+    height: 34px;
+    border-radius: 100px;
+    margin-top: 10px;   
+}
+
+.container2 {
+    display: flex;
+    flex-direction: row;
+    margin: 10px 17px 13px 10px;
+}
+
+.name-loc {
+    padding-left: 7px;
+    margin-top: 15px;
+}
+
+.titles {
+    font-size: 13px;
+    font-family: SourceSansProBold, sans-serif;
+}
+
+.post {
+    height: 375px;
+    width: 375px;
+}
+
+.reaction-icons {
+    display: flex;
+    flex-direction: row;
+    margin-top: 15px;
+    margin-left: 10px;
+}
+
+.icons {
+    width: 25px;
+    height: 25px;
+    padding-right: 10px;
+}
+
+.icons:hover {
+    opacity: 0.6;
+}
+
+.reaction-statement {
+    margin: 12px;
+}
+
