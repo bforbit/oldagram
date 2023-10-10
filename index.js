@@ -28,3 +28,40 @@ const posts = [
     }
 ]
 
+const containerOfPosts = document.querySelector(".containerPosts");
+
+let renderInHtml = '';
+
+for (let i = 0; i < posts.length; i++) {
+    
+  const artistPost = posts[i];
+  
+  renderInHtml += `
+    <section class="post-artist">
+    
+      <div class="container2">
+        <img src="${artistPost.avatar}" alt="user icon" class="icon-pic2">
+        <div class="name-loc">
+          <span class="titles">${artistPost.name}</span>
+          <br><span class="location">${artistPost.location}</span>
+        </div>
+      </div>
+      
+       <img src="${artistPost.post}" alt="post image" class="post">
+
+      <div class="reaction-icons">
+        <img src="images/icon-heart.png" class="icons">
+        <img src="images/icon-comment.png" class="icons">
+        <img src="images/icon-dm.png" class="icons">
+      </div>
+      
+      <div class="reaction-statement">
+        <span class="titles">${artistPost.likes} likes</span>
+        <p><span class="titles">${artistPost.username}</span><span class="comment">${artistPost.comment}</span></p>
+      </div>
+      
+    </section>
+   `;
+}
+
+containerOfPosts.innerHTML = renderInHtml;
