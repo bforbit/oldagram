@@ -1,3 +1,6 @@
+This project was part of a module on Scrimba related to essential CSS concepts. The goal was to implement HTML and CSS and create a mock-up of an Instagram feed with a single post structured to look like the actual site. The module also mentioned a few optional JavaScript stretch goals including generating 3 posts on the page and an interactive 'Like' heart icon that turns red and updates the count below the image. 
+
+-----------------------------
 # co7604a35b53c692619d999ec
 
 Quick start:
