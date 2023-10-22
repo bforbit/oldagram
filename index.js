@@ -30,15 +30,14 @@ const posts = [
 
 const containerOfPosts = document.querySelector(".containerPosts");
 
-let renderInHtml = '';
-
-for (let i = 0; i < posts.length; i++) {
-    
-  const artistPost = posts[i];
+posts.forEach((artistPost, index) => {
+  const post = document.createElement('div');
+  post.classList.add('post');
   
-  renderInHtml += `
-    <section class="post-artist">
-    
+  const postContent = document.createElement('section');
+  
+  post.innerHTML = `
+      <div class="singlePost">
       <div class="container2">
         <img src="${artistPost.avatar}" alt="user icon" class="icon-pic2">
         <div class="name-loc">
@@ -50,18 +49,28 @@ for (let i = 0; i < posts.length; i++) {
        <img src="${artistPost.post}" alt="post image" class="post">
 
       <div class="reaction-icons">
-        <img src="images/icon-heart.png" class="icons">
+        <img src="images/icon-heart.png" class="icons" id="heart-${index}">
         <img src="images/icon-comment.png" class="icons">
         <img src="images/icon-dm.png" class="icons">
       </div>
       
       <div class="reaction-statement">
-        <span class="titles">${artistPost.likes} likes</span>
+        <span class="titles like-count">${artistPost.likes} likes</span>
         <p><span class="titles">${artistPost.username}</span><span class="comment">${artistPost.comment}</span></p>
       </div>
-      
-    </section>
-   `;
-}
+      </div>
+    `;
+    
+    post.appendChild(postContent);
+    containerOfPosts.appendChild(post);
+    
+    const heartIcon = post.querySelector(`#heart-${index}`);
+    const likeCount = post.querySelector('.like-count');
+    
+    heartIcon.addEventListener('dblclick', function () {
+      artistPost.likes++;
+      likeCount.textContent = artistPost.likes + " " + "likes";
 
-containerOfPosts.innerHTML = renderInHtml;
+      heartIcon.src = "images/icon-heart-red.png";
+    });
+});
