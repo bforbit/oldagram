@@ -1,3 +1,4 @@
+// Array with 3 objects
 const posts = [
     {
         name: "Vincent van Gogh",
@@ -28,49 +29,51 @@ const posts = [
     }
 ]
 
+// Selected container element from HTML
 const containerOfPosts = document.querySelector(".containerPosts");
 
+// Loop through each object in posts array
 posts.forEach((artistPost, index) => {
-  const post = document.createElement('div');
-  post.classList.add('post');
+    
+    // Created single post 'div' container
+    const singlePost = document.createElement('div');
+    singlePost.classList.add('singlePost');
   
-  const postContent = document.createElement('section');
-  
-  post.innerHTML = `
-      <div class="singlePost">
-      <div class="container2">
+  // Established template string containing HTML for a single post
+  singlePost.innerHTML = `
+      <section class="singlePostHeader">
         <img src="${artistPost.avatar}" alt="user icon" class="icon-pic2">
-        <div class="name-loc">
-          <span class="titles">${artistPost.name}</span>
+        <div class="title-location">
+          <span class="titleBold">${artistPost.name}</span>
           <br><span class="location">${artistPost.location}</span>
         </div>
-      </div>
+      </section>
       
-       <img src="${artistPost.post}" alt="post image" class="post">
+       <img src="${artistPost.post}" alt="post image" class="post-size">
 
-      <div class="reaction-icons">
+      <section class="reaction-icons">
         <img src="images/icon-heart.png" class="icons" id="heart-${index}">
         <img src="images/icon-comment.png" class="icons">
         <img src="images/icon-dm.png" class="icons">
-      </div>
+      </section>
       
-      <div class="reaction-statement">
-        <span class="titles like-count">${artistPost.likes} likes</span>
-        <p><span class="titles">${artistPost.username}</span><span class="comment">${artistPost.comment}</span></p>
-      </div>
-      </div>
+      <section class="reaction-statement">
+        <span class="titleBold like-count">${artistPost.likes} likes</span>
+        <p><span class="titleBold">${artistPost.username}</span><span class="comment">${artistPost.comment}</span></p>
+      </section>
     `;
     
-    post.appendChild(postContent);
-    containerOfPosts.appendChild(post);
+    // Append single post to container
+    containerOfPosts.appendChild(singlePost);
     
-    const heartIcon = post.querySelector(`#heart-${index}`);
-    const likeCount = post.querySelector('.like-count');
+    // Select heart icon and like count
+    const heartIcon = singlePost.querySelector(`#heart-${index}`);
+    const likeCount = singlePost.querySelector('.like-count');
     
+    // Double-click icon, increase likes by 1 and updated number, changed icon to red version
     heartIcon.addEventListener('dblclick', function () {
       artistPost.likes++;
       likeCount.textContent = artistPost.likes + " " + "likes";
-
-      heartIcon.src = "images/icon-heart-red.png";
+      heartIcon.src = "/images/icon-heart-red.png";
     });
 });

@@ -47,15 +47,11 @@ header {
 
 /*BODY*/
 
-.containerPosts {
-    margin-top: -140px;
-}
-
 .singlePost {
-    margin-top: 170px;
+    margin-top: 25px;
 }
 
-.container2 {
+.singlePostHeader {
     display: flex;
     flex-direction: row; 
 }
@@ -72,11 +68,11 @@ header {
     border-radius: 100px;
 }
 
-.name-loc {
+.title-location {
     padding-left: 7px;
 }
 
-.titles {
+.titleBold {
     font-size: 13px;
     font-family: SourceSansProBold, sans-serif;
     margin-right: 5px;
@@ -88,7 +84,7 @@ header {
     font-family: SourceSansProReg, sans-serif;
 }
 
-.post {
+.post-size {
     height: 375px;
     width: 375px;
 }
